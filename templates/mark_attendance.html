@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mark Attendance</title>
+</head>
+<body>
+    <h2>Mark Attendance</h2>
+    <form method="POST">
+        {% for student in students %}
+            <p>
+                {{ student["name"] }}
+                <select name="{{ student['id'] }}">
+                    <option value="P">Present</option>
+                    <option value="A">Absent</option>
+                </select>
+            </p>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>
